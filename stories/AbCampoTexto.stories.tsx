@@ -1,21 +1,21 @@
-import React from "react"
-import { ComponentMeta, ComponentStory } from '@storybook/react'
-import { AbCampoTexto, CampoTextoProps } from '../src'
+import React from 'react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { AbCampoTexto, AbCampoTextoProps } from '../src'
 
 export default {
-    title: 'Componentes/AbCampoTexto',
-    component: AbCampoTexto,
-} as ComponentMeta<typeof AbCampoTexto>
+  title: 'componentes/AbCampoTexto',
+  component: AbCampoTexto,
+  argTypes: {
+    label: {
+        control: 'text'
+    }
+  },
+  parameters: { actions: { argTypesRegex: '^on.*' } },
+} as ComponentMeta<typeof AbCampoTexto>;
 
-const Template: ComponentStory<typeof AbCampoTexto> = (args) => <AbCampoTexto {...args} /> 
+const Template: ComponentStory<typeof AbCampoTexto> = (args) => <AbCampoTexto {...args} />;
 
-export const Padrao = Template.bind({})
-
-Padrao.args = {
-    id: 'email',
-    placeholder: 'seuemail@maneiro.com.br',
-    label: 'E-mail',
-    value: '',
-} as CampoTextoProps
-
-
+export const AbCampoTextoComponent = Template.bind({})
+AbCampoTextoComponent.args = {
+    label: 'Uma label interessante',
+} as AbCampoTextoProps
